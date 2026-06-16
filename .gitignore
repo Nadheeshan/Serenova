@@ -1,0 +1,43 @@
+# NetBeans (Ant)
+
+# Build output
+
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+
+# NetBeans user-specific settings
+
+/nbproject/private/
+
+# Compiled Java files
+
+*.class
+
+# Packaged artifacts
+
+*.jar
+*.war
+*.ear
+
+# Logs
+
+*.log
+
+# Crash dumps
+
+hs_err_pid*
+replay_pid*
+
+# Environment/config files containing secrets
+
+.env
+.env.*
+database.properties
+db.properties
+
+# OS files
+
+.DS_Store
+Thumbs.db
