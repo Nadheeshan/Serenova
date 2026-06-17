@@ -1,7 +1,7 @@
 -- ============================================================
 -- Serenova Boutique Hotel Management System
 -- Database Setup Script
--- Developer: Ravi Nadheeshan | DSE 25.2 | NIBM
+-- Developer: Ravi Nadheeshan | CODSE252F037 | NIBM
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS serenova_db;
