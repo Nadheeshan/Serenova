@@ -5,7 +5,9 @@
 package serenova;
 import serenova.db.DBConnection;
 import java.sql.*;
-import serenova.model.Guest;
+import serenova.model.*;
+import java.math.*;
+
 
 /**
  *
@@ -29,6 +31,10 @@ public class TestConnection {
         Guest g = new Guest("john","200126602837","076034685","rkshan1569@gmail.com","colombo 7");
         String name = g.getFullName();
         System.out.println("Guest name is "+name);
+        
+        Room r = new Room("100","Normal","occupied",new BigDecimal("1500.50"));
+        System.out.println(r.getRoomNumber()+r.getRoomType());
+        
         
 
     }
