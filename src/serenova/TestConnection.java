@@ -5,6 +5,7 @@
 package serenova;
 import serenova.db.DBConnection;
 import java.sql.*;
+import serenova.model.Guest;
 
 /**
  *
@@ -24,6 +25,11 @@ public class TestConnection {
             System.out.println("Connection Failed");
             System.out.println(e);
         }
+        
+        Guest g = new Guest("john","200126602837","076034685","rkshan1569@gmail.com","colombo 7");
+        String name = g.getFullName();
+        System.out.println("Guest name is "+name);
+        
 
     }
 }
