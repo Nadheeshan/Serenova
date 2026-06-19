@@ -3,11 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package serenova;
-import serenova.db.DBConnection;
-import java.sql.*;
-import serenova.model.*;
-import java.math.*;
 
+import serenova.dao.GuestDAO;
+import serenova.model.Guest;
 
 /**
  *
@@ -17,25 +15,31 @@ public class TestConnection {
     
     public static void main (String[]args)
     {
-        try
-        {
-            DBConnection.getInstance();
-            System.out.println("Connected Succesfully");
-        }
-        catch(SQLException e)
-        {
-            System.out.println("Connection Failed");
-            System.out.println(e);
-        }
-        
-        Guest g = new Guest("john","200126602837","076034685","rkshan1569@gmail.com","colombo 7");
-        String name = g.getFullName();
-        System.out.println("Guest name is "+name);
-        
-        Room r = new Room("100","Normal","occupied",new BigDecimal("1500.50"));
-        System.out.println(r.getRoomNumber()+r.getRoomType());
-        
-        
+        try {
 
+            GuestDAO dao = new GuestDAO();
+
+            Guest g = new Guest("Nahdeeshan","200126602837","0760354685","rkshan1459@gmail.com","colombo");
+            dao.addGuest(g);
+            Guest g2 = new Guest("Danu","200126602837","0760354685","rkshan1459@gmail.com","colombo");
+            g2.setGuestId(1);
+            dao.updateGuest(g2);
+            
+            dao.deleteGuest(6);
+            
+            Guest g3 = dao.getGuestById(1);
+            if(g3 != null){
+                
+                System.out.println(g3.getFullName());
+            }
+            
+            
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
     }
 }
